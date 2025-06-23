@@ -35,14 +35,14 @@ jobs:
       
       - name: Upload Newman HTML report
         if: always()
-        uses: actions/upload-artifact@v4.3.1
+        uses: peaceiris/actions-gh-pages@v4.0.0
         with:
           name: newman-report
           path: newman/*.html
 
       - name: Create github page branch
         if : always()
-        uses :  peaceiris/actions-github-pages@v3.1.12
+        uses :  peaceiris/actions-github-pages@v4.0.0
         with:
-          github_token : ${{ secret-GITHUB_TOKEN }}
+          github_token : ${{ secret.GITHUB_TOKEN }}
           publish_dir: newman/
