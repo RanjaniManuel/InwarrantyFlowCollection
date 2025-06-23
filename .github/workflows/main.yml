@@ -6,7 +6,7 @@ on:
       - main
   workflow_dispatch:
   schedule:
-    - cron: '30 05 * * *'  # Every day at 05:30 UTC
+  - cron: '30 05 * * *'  # Every day at 05:30 UTC
 
 jobs:
   run-postman-tests:
