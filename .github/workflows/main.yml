@@ -50,7 +50,7 @@ jobs:
           
       - name : Send Email Notification
         if : always()
-        uses :  dawidd6/action-send-mail@v3.12.0
+        uses :  dawidd6/action-send-mail@v5
         with:
           server_address : smtp.gmail.com
           server_port : 465
@@ -63,6 +63,8 @@ jobs:
              Hi,
               Phoenix Inwarranty flow has been executed and the Report has been published and the url
               is :https://ranjanimanuel.github.io/InwarrantyFlowCollection/
+              Thank you.
+              RanjaniManuel.
              
           
           
