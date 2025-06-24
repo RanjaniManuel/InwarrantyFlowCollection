@@ -54,11 +54,11 @@ jobs:
         with:
           server_address : smtp.gmail.com
           server_port : 465
-          username : ${{ secret.GMAIL_USERNAME }}
-          password : ${{ secret.GMAIL_PASSWORD }}
+          username : ${{ secrets.GMAIL_USERNAME }}
+          password : ${{ secrets.GMAIL_PASSWORD }}
           subject : API TEST REPORT -GitHub Actions
           to : ranjanimanuel@gmail.com
-          from: ${{ secret.GMAIL_USERNAME }}
+          from: ${{ secrets.GMAIL_USERNAME }}
           body : |
              Hi,
               Phoenix Inwarranty flow has been executed and the Report has been published and the url
