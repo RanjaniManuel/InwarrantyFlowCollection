@@ -50,15 +50,15 @@ jobs :
           
       - name : Send Email Notification
         if : always()
-        uses :  dawidd6/action-send-mail@v5
+        uses :  dawidd6/action-send-mail@v6
         with :
           server_address : smtp.gmail.com
           server_port : 465
-          username : ${{ secrets.GMAIL_USERNAME }}
-          password : ${{ secrets.GMAIL_PASSWORD }}
-          subject : API TEST REPORT -GitHub Actions
-          to : ranjanimanuel@gmail.com
-          from : ${{ secrets.GMAIL_USERNAME }}
+          username : ${{ secrets.EMAIL_USERNAME }}
+          password : ${{ secrets.EMAIL_PASSWORD }}
+          subject : API TEST REPORT -GitHub Actions          
+          to : ranjanimanuel@gmail.com  
+          from : ${{ secrets.EMAIL_USERNAME }}
           body : |
              Hi,
               Phoenix Inwarranty flow has been executed and the Report has been published and the url
