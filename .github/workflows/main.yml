@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v4.6.2
         with:
           name: Newman Report
-          path: newman/*.html
+          path: newman/*.html 
 
       - name: Create github page branch
         if : always()
@@ -47,3 +47,23 @@ jobs:
         with:
           github_token : ${{ secrets.GITHUB_TOKEN }}
           publish_dir: newman/
+
+          
+      - name : Send Email Notification
+        if : always()
+        uses :  dawidd6/action-send-mail@v6
+        with:
+          server_address : smtp.gmail.com
+          server_port : 465
+          username : ${{ secret.GMAIL_USERNAME }}
+          password : ${{ secret.GMAIL_PASSWORD }}
+          subject : API TEST REPORT -GitHub Actions
+          to : ranjanimanuel@gmail.com
+          from: ${{ secret.GMAIL_USERNAME }}
+          body : |
+             Hi,
+              Phoenix Inwarranty flow has been executed and the Report has been published and the url
+              is :https://ranjanimanuel.github.io/InwarrantyFlowCollection/
+             
+          
+          
